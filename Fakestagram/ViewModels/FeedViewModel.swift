@@ -6,25 +6,21 @@
 //
 
 import Foundation
-
-
-
-protocol FeedViewModel: ObservableObject {
-    var results: [User] { get }
-    var status: Status { get }
-}
-
-final class FeedViewModelImpl: FeedViewModel {
-    // MARK: - Properties
-
-    var results: [User] = []
-    @Published var status: Status = .loading
-
-    init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+    
+class FeedViewModel: ObservableObject {
+    
+    @Published var users = [User]()
+    
+    let dataService: DataService
+    
+    init(dataService: DataService = AppDataService()) {
+        self.dataService = dataService
+    }
+    
+    func getUsers() {
+        dataService.getUsers { [weak self] users in
             guard let strongSelf = self else { return }
-            strongSelf.status = .loaded
-            dump(strongSelf.status)
+            strongSelf.users = users
         }
     }
 }

@@ -8,26 +8,29 @@
 import XCTest
 @testable import Fakestagram
 
+class MockDataService: DataService {
+    func getUsers(completion: @escaping ([User]) -> Void) {
+        completion([
+            User(id: "1", name: Name(firstName: "Kyle", lastName: "Patterson"), picture: Picture(large: "", thumbnail: "")),
+            User(id: "2", name: Name(firstName: "Johny", lastName: "Walker"), picture: Picture(large: "", thumbnail: ""))])
+    }
+}
+
 class FakestagramTests: XCTestCase {
+    
+    var sut: FeedView.ViewModel!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = FeedView.ViewModel(dataService: MockDataService())
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_getUsers() throws {
+        XCTAssertTrue(sut.users.isEmpty)
+        sut.getUsers()
+        XCTAssertEqual(sut.users.count, 2)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-            FeedView(viewModel: FeedViewModelImpl())
+            FeedView(viewModel: FeedViewModel(dataService: AppDataService()))
                 .tabItem {
                     Image(systemName: "house")
                     Text("Feed")

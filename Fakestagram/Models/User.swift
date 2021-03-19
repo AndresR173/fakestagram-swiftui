@@ -8,7 +8,7 @@
 import Foundation
 
 struct User: Codable, Identifiable {
-    var id: String = UUID().uuidString
+    var id: String { return UUID().uuidString }
     let name: Name
     let picture: Picture
 
@@ -36,4 +36,12 @@ struct Picture: Codable {
         case large
         case thumbnail
     }
+}
+
+extension User {
+    static let mockUsers = [
+        User(name: Name(firstName: "Rubbermaid", lastName: "Laverde"), picture: Picture(large: "", thumbnail: "")),
+        User(name: Name(firstName: "Andrés", lastName: "Rojas"), picture: Picture(large: "", thumbnail: "")),
+        User(name: Name(firstName: "Daniel", lastName: "Cardona"), picture: Picture(large: "", thumbnail: ""))
+    ]
 }

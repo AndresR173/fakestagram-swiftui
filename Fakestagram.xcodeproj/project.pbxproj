@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78001C432604611B00508FAA /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78001C422604611B00508FAA /* PostView.swift */; };
+		784E9D1625FBE1000004FCB8 /* AppDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E9D1525FBE1000004FCB8 /* AppDataService.swift */; };
+		784E9D3125FC0A3F0004FCB8 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E9D3025FC0A3F0004FCB8 /* StoryView.swift */; };
+		78BB485A26042D6A0028EC79 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78BB485926042D6A0028EC79 /* Billabong.ttf */; };
+		78BB4862260431980028EC79 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB4861260431980028EC79 /* FeedHeaderView.swift */; };
 		BACC168925E99BB80034935E /* FakestagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC168825E99BB80034935E /* FakestagramApp.swift */; };
 		BACC168D25E99BBE0034935E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACC168C25E99BBE0034935E /* Assets.xcassets */; };
 		BACC169025E99BBE0034935E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACC168F25E99BBE0034935E /* Preview Assets.xcassets */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78001C422604611B00508FAA /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		784E9D1525FBE1000004FCB8 /* AppDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataService.swift; sourceTree = "<group>"; };
+		784E9D3025FC0A3F0004FCB8 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		78BB485926042D6A0028EC79 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		78BB4861260431980028EC79 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		BACC168525E99BB80034935E /* Fakestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fakestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACC168825E99BB80034935E /* FakestagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakestagramApp.swift; sourceTree = "<group>"; };
 		BACC168C25E99BBE0034935E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +96,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784E9D1425FBE0F00004FCB8 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				784E9D1525FBE1000004FCB8 /* AppDataService.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		78BB48662604319E0028EC79 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				BACC16E125E9A2580034935E /* FeedView.swift */,
+				78BB4861260431980028EC79 /* FeedHeaderView.swift */,
+				784E9D3025FC0A3F0004FCB8 /* StoryView.swift */,
+				78001C422604611B00508FAA /* PostView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		BACC167C25E99BB80034935E = {
 			isa = PBXGroup;
 			children = (
@@ -109,15 +138,15 @@
 		BACC168725E99BB80034935E /* Fakestagram */ = {
 			isa = PBXGroup;
 			children = (
+				784E9D1425FBE0F00004FCB8 /* Data Source */,
 				BACC168C25E99BBE0034935E /* Assets.xcassets */,
-				BACC16B925E99C970034935E /* Datasources */,
 				BACC168825E99BB80034935E /* FakestagramApp.swift */,
 				BACC169125E99BBE0034935E /* Info.plist */,
 				BACC16B825E99C8F0034935E /* Models */,
 				BACC168E25E99BBE0034935E /* Preview Content */,
 				BACC16BA25E99CA30034935E /* Utils */,
-				BACC16B725E99C870034935E /* ViewModels */,
 				BACC16B625E99C7F0034935E /* Views */,
+				BACC16B725E99C870034935E /* ViewModels */,
 			);
 			path = Fakestagram;
 			sourceTree = "<group>";
@@ -125,6 +154,7 @@
 		BACC168E25E99BBE0034935E /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				78BB485926042D6A0028EC79 /* Billabong.ttf */,
 				BACC168F25E99BBE0034935E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -151,8 +181,8 @@
 		BACC16B625E99C7F0034935E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78BB48662604319E0028EC79 /* Feed */,
 				BACC16D925E9A1270034935E /* HomeView.swift */,
-				BACC16E125E9A2580034935E /* FeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,13 +203,6 @@
 				BACC16EB25E9A4680034935E /* Status.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		BACC16B925E99C970034935E /* Datasources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Datasources;
 			sourceTree = "<group>";
 		};
 		BACC16BA25E99CA30034935E /* Utils */ = {
@@ -305,6 +328,7 @@
 				BACC169025E99BBE0034935E /* Preview Assets.xcassets in Resources */,
 				BACC16D225E9A0DC0034935E /* response.json in Resources */,
 				BACC168D25E99BBE0034935E /* Assets.xcassets in Resources */,
+				78BB485A26042D6A0028EC79 /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +353,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784E9D3125FC0A3F0004FCB8 /* StoryView.swift in Sources */,
+				784E9D1625FBE1000004FCB8 /* AppDataService.swift in Sources */,
+				78BB4862260431980028EC79 /* FeedHeaderView.swift in Sources */,
 				BACC16E725E9A2870034935E /* FeedViewModel.swift in Sources */,
 				BACC16C425E99DB80034935E /* User.swift in Sources */,
 				BACC168925E99BB80034935E /* FakestagramApp.swift in Sources */,
@@ -336,6 +363,7 @@
 				BACC16DA25E9A1270034935E /* HomeView.swift in Sources */,
 				BACC16BC25E99D4F0034935E /* Constants.swift in Sources */,
 				BACC16E225E9A2580034935E /* FeedView.swift in Sources */,
+				78001C432604611B00508FAA /* PostView.swift in Sources */,
 				BACC16C925E99FC10034935E /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

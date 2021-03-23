@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,10 @@
 		BACC16E225E9A2580034935E /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC16E125E9A2580034935E /* FeedView.swift */; };
 		BACC16E725E9A2870034935E /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC16E625E9A2870034935E /* FeedViewModel.swift */; };
 		BACC16EC25E9A4680034935E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC16EB25E9A4680034935E /* Status.swift */; };
+		BAD9ED11260A459700165558 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BAD9ED10260A459700165558 /* SDWebImageSwiftUI */; };
+		BAD9ED1E260A764E00165558 /* posts_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BAD9ED1D260A764E00165558 /* posts_response.json */; };
+		BAD9ED23260A794600165558 /* PostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9ED22260A794600165558 /* PostsResponse.swift */; };
+		BAD9ED28260A79FD00165558 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9ED27260A79FD00165558 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,9 @@
 		BACC16E125E9A2580034935E /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		BACC16E625E9A2870034935E /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		BACC16EB25E9A4680034935E /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		BAD9ED1D260A764E00165558 /* posts_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = posts_response.json; path = ../../../../../Downloads/posts_response.json; sourceTree = "<group>"; };
+		BAD9ED22260A794600165558 /* PostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsResponse.swift; sourceTree = "<group>"; };
+		BAD9ED27260A79FD00165558 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD9ED11260A459700165558 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +209,8 @@
 				BACC16C825E99FC10034935E /* Response.swift */,
 				BACC16C325E99DB80034935E /* User.swift */,
 				BACC16EB25E9A4680034935E /* Status.swift */,
+				BAD9ED22260A794600165558 /* PostsResponse.swift */,
+				BAD9ED27260A79FD00165558 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +227,7 @@
 		BACC16D025E9A0C90034935E /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				BAD9ED1D260A764E00165558 /* posts_response.json */,
 				BACC16D125E9A0DC0034935E /* response.json */,
 			);
 			path = Samples;
@@ -238,6 +249,9 @@
 			dependencies = (
 			);
 			name = Fakestagram;
+			packageProductDependencies = (
+				BAD9ED10260A459700165558 /* SDWebImageSwiftUI */,
+			);
 			productName = Fakestagram;
 			productReference = BACC168525E99BB80034935E /* Fakestagram.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +323,9 @@
 				Base,
 			);
 			mainGroup = BACC167C25E99BB80034935E;
+			packageReferences = (
+				BAD9ED0F260A459700165558 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = BACC168625E99BB80034935E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD9ED1E260A764E00165558 /* posts_response.json in Resources */,
 				BACC169025E99BBE0034935E /* Preview Assets.xcassets in Resources */,
 				BACC16D225E9A0DC0034935E /* response.json in Resources */,
 				BACC168D25E99BBE0034935E /* Assets.xcassets in Resources */,
@@ -358,6 +376,8 @@
 				78BB4862260431980028EC79 /* FeedHeaderView.swift in Sources */,
 				BACC16E725E9A2870034935E /* FeedViewModel.swift in Sources */,
 				BACC16C425E99DB80034935E /* User.swift in Sources */,
+				BAD9ED28260A79FD00165558 /* Post.swift in Sources */,
+				BAD9ED23260A794600165558 /* PostsResponse.swift in Sources */,
 				BACC168925E99BB80034935E /* FakestagramApp.swift in Sources */,
 				BACC16EC25E9A4680034935E /* Status.swift in Sources */,
 				BACC16DA25E9A1270034935E /* HomeView.swift in Sources */,
@@ -684,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAD9ED0F260A459700165558 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAD9ED10260A459700165558 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAD9ED0F260A459700165558 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BACC167D25E99BB80034935E /* Project object */;
 }

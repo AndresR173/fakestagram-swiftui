@@ -10,10 +10,11 @@ import Foundation
 class FeedViewModel: ObservableObject {
     
     @Published var users = [User]()
+    @Published var posts = [Post]()
     
     let dataService: DataService
     
-    init(dataService: DataService = AppDataService()) {
+    init(dataService: DataService) {
         self.dataService = dataService
     }
     
@@ -23,4 +24,11 @@ class FeedViewModel: ObservableObject {
             strongSelf.users = users
         }
     }
+    
+    func getPosts() {
+        dataService.getPosts { [weak self] posts in
+            guard let strongSelf = self else {return}
+            strongSelf.posts = posts
+        }
+    }    
 }

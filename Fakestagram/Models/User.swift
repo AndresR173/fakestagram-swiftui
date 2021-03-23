@@ -12,7 +12,7 @@ struct User: Codable, Identifiable {
     let name: Name
     let picture: Picture
 
-    enum CodinKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name
         case picture
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct StoryView: View {
     
@@ -14,9 +15,8 @@ struct StoryView: View {
     var body: some View {
         if let user = self.user {
             VStack {
-                Image("SampleUser1")
+                WebImage(url: URL(string: user.picture.thumbnail))
                     .resizable()
-                    .scaledToFill()
                     .clipShape(Circle())
                     .shadow(color: .black, radius: 6, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     .frame(width: 100, height: 100)

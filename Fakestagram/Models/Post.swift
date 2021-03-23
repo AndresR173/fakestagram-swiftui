@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Post: Codable {
+struct Post: Codable, Identifiable {
     
+    var id: String { return UUID().uuidString }
     let user : User
     let image : String
     let likes : Int
@@ -20,6 +21,6 @@ struct Post: Codable {
         case likes
         case message
     }
-    
-    
+        
 }
+

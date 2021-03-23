@@ -41,8 +41,8 @@ struct FeedView: View {
                     }
                     
                     VStack(spacing: 24) {
-                        ForEach(0..<100) { _ in
-                            PostView()
+                        ForEach(viewModel.posts) { post in
+                            PostView(post: post)                            
                         }
                     }
                 }
@@ -50,6 +50,7 @@ struct FeedView: View {
         }
         .onAppear(perform: {
             viewModel.getUsers()
+            viewModel.getPosts()
         })
     }
 }

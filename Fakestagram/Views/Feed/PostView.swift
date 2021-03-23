@@ -6,21 +6,25 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PostView: View {
+    
+    let post: Post
     
     var screenWidth: CGFloat { return UIScreen.main.bounds.width }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("SampleUser1")
+                WebImage(url: URL(string: post.user.picture.thumbnail))
                     .resizable()
-                    .scaledToFill()
+                    .indicator(.activity)
+                    .scaledToFit()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
                 
-                Text("User Name")
+                Text("\(post.user.name.firstName) \(post.user.name.lastName)")
                 
                 Spacer()
                 
@@ -32,9 +36,9 @@ struct PostView: View {
             }
             .padding(.horizontal, 8)
             
-            Image("SampleUser1")
+            WebImage(url: URL(string: post.image))
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(width: screenWidth, height: screenWidth*0.7)
             
             HStack {
@@ -67,8 +71,8 @@ struct PostView: View {
             .padding(.horizontal, 8)
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("140 Me gusta")
-                Text("Este es un mensaje de ejemplo de un post de Instagram")
+                Text("\(post.likes) Me gusta")
+                Text(post.message)
                     .font(.body)
                     .lineLimit(2)
             }
@@ -79,6 +83,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(post: Post(user: User(name: Name(firstName: "Rubbermaid", lastName: "Laverde"), picture: Picture(large: "", thumbnail: "https://randomuser.me/api/portraits/thumb/men/6.jpg")), image: "https://picsum.photos/600?image=145", likes: 43, message: "River Plate ganó la libertadores 2018 en Madrid ante su clásico rival"))
     }
 }

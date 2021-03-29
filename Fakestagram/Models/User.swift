@@ -11,10 +11,25 @@ struct User: Codable, Identifiable {
     var id: String { return UUID().uuidString }
     let name: Name
     let picture: Picture
+    let likes: Int?
+    let message: String?
+    let image: String?
 
     enum CodinKeys: String, CodingKey {
         case name
         case picture
+        case likes
+        case message
+        case image
+    }
+    
+    var urlImageThumbnail: URL? {
+        return URL(string: picture.thumbnail)
+    }
+    
+    var urlImagePost: URL? {
+        let stringURL = "https://picsum.photos/600?image=\(Int.random(in: 0...100))"
+        return URL(string: image ?? stringURL)
     }
 }
 
@@ -40,8 +55,8 @@ struct Picture: Codable {
 
 extension User {
     static let mockUsers = [
-        User(name: Name(firstName: "Rubbermaid", lastName: "Laverde"), picture: Picture(large: "", thumbnail: "")),
-        User(name: Name(firstName: "Andrés", lastName: "Rojas"), picture: Picture(large: "", thumbnail: "")),
-        User(name: Name(firstName: "Daniel", lastName: "Cardona"), picture: Picture(large: "", thumbnail: ""))
+        User(name: Name(firstName: "Rubbermaid", lastName: "Laverde"), picture: Picture(large: "", thumbnail: ""), likes: 100, message: "Hello world", image: nil),
+        User(name: Name(firstName: "Andrés", lastName: "Rojas"), picture: Picture(large: "", thumbnail: ""), likes: 200, message: "River Plate", image: nil),
+        User(name: Name(firstName: "Daniel", lastName: "Cardona"), picture: Picture(large: "", thumbnail: ""), likes: 300, message: "Hello World", image: nil)
     ]
 }

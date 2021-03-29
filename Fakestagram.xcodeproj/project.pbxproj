@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		784E9D3125FC0A3F0004FCB8 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E9D3025FC0A3F0004FCB8 /* StoryView.swift */; };
 		78BB485A26042D6A0028EC79 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78BB485926042D6A0028EC79 /* Billabong.ttf */; };
 		78BB4862260431980028EC79 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB4861260431980028EC79 /* FeedHeaderView.swift */; };
+		BAC6B47E260E85A0007FED13 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BAC6B47D260E85A0007FED13 /* SDWebImageSwiftUI */; };
 		BACC168925E99BB80034935E /* FakestagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACC168825E99BB80034935E /* FakestagramApp.swift */; };
 		BACC168D25E99BBE0034935E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACC168C25E99BBE0034935E /* Assets.xcassets */; };
 		BACC169025E99BBE0034935E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACC168F25E99BBE0034935E /* Preview Assets.xcassets */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC6B47E260E85A0007FED13 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +240,9 @@
 			dependencies = (
 			);
 			name = Fakestagram;
+			packageProductDependencies = (
+				BAC6B47D260E85A0007FED13 /* SDWebImageSwiftUI */,
+			);
 			productName = Fakestagram;
 			productReference = BACC168525E99BB80034935E /* Fakestagram.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +314,9 @@
 				Base,
 			);
 			mainGroup = BACC167C25E99BB80034935E;
+			packageReferences = (
+				BAC6B47C260E85A0007FED13 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = BACC168625E99BB80034935E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -684,6 +692,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAC6B47C260E85A0007FED13 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAC6B47D260E85A0007FED13 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAC6B47C260E85A0007FED13 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BACC167D25E99BB80034935E /* Project object */;
 }

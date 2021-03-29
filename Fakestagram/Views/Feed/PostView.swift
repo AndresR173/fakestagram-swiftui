@@ -6,21 +6,24 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PostView: View {
+    
+    let user: User
     
     var screenWidth: CGFloat { return UIScreen.main.bounds.width }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("SampleUser1")
+                WebImage(url: user.urlImageThumbnail)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
                 
-                Text("User Name")
+                Text("\(user.name.firstName) \(user.name.lastName)")
                 
                 Spacer()
                 
@@ -32,10 +35,10 @@ struct PostView: View {
             }
             .padding(.horizontal, 8)
             
-            Image("SampleUser1")
+            WebImage(url: user.urlImagePost)
                 .resizable()
-                .scaledToFill()
                 .frame(width: screenWidth, height: screenWidth*0.7)
+                .scaledToFill()
             
             HStack {
                 Button(action: {}, label: {
@@ -67,8 +70,8 @@ struct PostView: View {
             .padding(.horizontal, 8)
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("140 Me gusta")
-                Text("Este es un mensaje de ejemplo de un post de Instagram")
+                Text("\(user.likes ?? 0) Me gusta")
+                Text(user.message ?? "")
                     .font(.body)
                     .lineLimit(2)
             }
@@ -79,6 +82,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(user: User.mockUsers[0])
     }
 }

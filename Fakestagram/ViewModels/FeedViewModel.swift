@@ -13,7 +13,7 @@ class FeedViewModel: ObservableObject {
     
     let dataService: DataService
     
-    init(dataService: DataService = AppDataService()) {
+    init(dataService: DataService) {
         self.dataService = dataService
     }
     

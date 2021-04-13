@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Combine
     
 class FeedViewModel: ObservableObject {
     
     @Published var users = [User]()
+    var suscriptions = Set<AnyCancellable>()
     
     let dataService: DataService
     
@@ -18,9 +20,18 @@ class FeedViewModel: ObservableObject {
     }
     
     func getUsers() {
-        dataService.getUsers { [weak self] users in
-            guard let strongSelf = self else { return }
-            strongSelf.users = users
-        }
+        dataService.getUsers()
+            .receive(on: RunLoop.main)
+            .sink { result in
+                switch result {
+                case .success:
+                    print("Receiving info from network")
+                    if let usersResult = try? result.get().results {
+                        self.users = usersResult
+                    }
+                case .failure:
+                    print("Something went wrong")
+                }
+            }.store(in: &suscriptions)
     }
 }
